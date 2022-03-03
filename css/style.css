@@ -1,7 +1,7 @@
 @charset "utf-8";
 @import url("https://fonts.googleapis.com/css?family=Orbitron&display=swap");
 
-/* reset */
+/* init */
 * {
 	margin: 0px;
 	padding: 0px;
@@ -22,7 +22,7 @@ body {
 header {
 	width: 400px;
 	height: 100%;
-	background: linear-gradient(45deg, aqua, royalblue);
+	background: linear-gradient(45deg, rgb(14, 183, 235), royalblue);
 	position: fixed;
 	top: 0px;
 	left: 0px;
@@ -118,4 +118,86 @@ main section article div p {
 	font: 10px/1.2 'arial';
 	color: #777;
 	margin-bottom: 15px;
+}
+
+/* responsive */
+@media screen and (max-width: 1599px) {
+	header {
+		width: 370px;
+	}
+	main {
+		margin-left: 370px;
+	}
+	main section article {
+		width: 25%;
+	}
+}
+@media screen and (max-width: 1199px) {
+	header {
+		width: 100%;
+		height: 110px;
+		position: absolute;
+	}
+	header h1 {
+		font: bold 24px/1 'orbitron';
+		transform: translateY(-50%);
+	}
+	header h1::before, #header h1::after {
+		display: none;
+	}
+	header ul {
+		left: 83%;
+		bottom: 40px;
+	}
+	header ul li {
+		margin-right: 20px;
+	}
+	header ul li a {
+		font-size: 20px;
+	}
+	header ul li a span {
+		display: none;
+	}
+	main {
+		width: 100%;
+		margin-left: 0px;
+		margin-top: 90px;
+	}
+	main section article {
+		width: 25%;
+	}
+}
+@media screen and (max-width: 899px) {
+	header h1::after {
+		display: none;
+	}
+	header ul {
+		left: 80%;
+	}
+	main section article {
+		width: 33.33%;
+	}
+}
+@media screen and (max-width: 679px) {
+	header {
+		height: 80px;
+	}
+	header ul {
+		display: none;
+		left: 70%;
+	}
+	main {
+		margin-top: 55px;
+	}
+	main section article {
+		width: 50%;
+	}
+}
+@media screen and (max-width: 539px) {
+	header ul {
+		display: none;
+	}
+	main section article {
+		width: 100%;
+	}
 }
