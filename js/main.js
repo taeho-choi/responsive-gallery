@@ -1,14 +1,25 @@
-// Page load event
+const frame = "section";
+const box = "article";
+const speed = "0.5s";
+const activeClass = "on";
+const btn = document.querySelectorAll("main ul li");
+let grid;
+
 window.addEventListener("load", ()=> {
-    const grid = new Isotope("section", {
-        itemSelector: "article",
-        columnWidth: "article",
-        transitionDuration: "0.5s"
+    init();
+    filter(btn);
+})
+
+function init() {
+    grid = new Isotope(frame, {
+        itemSelector: box,
+        columnWidth: box,
+        transitionDuration: speed
     });
+}
 
-    const btns = document.querySelectorAll("main ul li");
-
-    for(let el of btns) {
+function filter(arr) {
+    for(let el of arr) {
         el.addEventListener("click", e=> {
             e.preventDefault();
 
@@ -18,11 +29,11 @@ window.addEventListener("load", ()=> {
                 filter: sort
             });
 
-            for(let el of btns) {
-                el.classList.remove("on");
+            for(let el of arr) {
+                el.classList.remove(activeClass);
             }
 
-            e.currentTarget.classList.add("on");
+            e.currentTarget.classList.add(activeClass);
         })
     }
-});
+}
